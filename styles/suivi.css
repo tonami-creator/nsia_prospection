@@ -1,0 +1,209 @@
+/* =========================
+   RESET & VARIABLES
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+:root {
+    --primary: #004aad;
+    --secondary: #f4f6f9;
+    --dark: #222;
+    --white: #ffffff;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+body {
+    display: flex;
+    min-height: 100vh;
+    background: var(--secondary);
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+    width: 260px;
+    background: var(--primary);
+    color: var(--white);
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+}
+
+.logo {
+    padding: 20px;
+    text-align: center;
+    background: #003b8f;
+}
+
+.logo img {
+    max-width: 150px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding-top: 20px;
+}
+
+.sidebar nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 25px;
+    color: var(--white);
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================
+   CONTENT PRINCIPAL
+========================= */
+.content {
+    margin-left: 260px;
+    padding: 40px;
+    width: calc(100% - 260px);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   HERO / TITRE PAGE
+========================= */
+.hero h1 {
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   FORMULAIRE SUIVI
+========================= */
+.form-container {
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 40px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+/* Bouton formulaire */
+.form-container button {
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    background: var(--primary);
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.form-container button:hover {
+    opacity: 0.9;
+}
+
+/* =========================
+   TABLEAU SUIVI
+========================= */
+.table-container {
+    overflow-x: auto;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    min-width: 100px;
+}
+
+table th {
+    background: var(--primary);
+    color: #fff;
+}
+
+table td button {
+    margin-right: 5px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+table td .edit-btn {
+    background: #ffc107;
+    color: #222;
+}
+
+table td .delete-btn {
+    background: #dc3545;
+    color: #fff;
+}
+
+/* =========================
+   UTILITAIRES
+========================= */
+.hidden {
+    display: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+
+    .sidebar span {
+        display: none;
+    }
+
+    .content {
+        margin-left: 70px;
+        padding: 20px;
+    }
+
+    .form-container, table {
+        width: 100%;
+    }
+}

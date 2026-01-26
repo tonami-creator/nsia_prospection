@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>NSIA | Accueil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/accueil.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- =========================
+     NAVIGATION LATÉRALE
+========================= -->
+<aside class="sidebar">
+    <div class="logo">
+        <img src="images/nsia_logo.jpg" alt="Logo NSIA">
+    </div>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html" class="active">
+                    <i class="fas fa-home"></i>
+                    <span>Accueil</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="prospection.html">
+                    <i class="fas fa-users"></i>
+                    <span>Prospect</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="suivi.html">
+                    <i class="fas fa-clipboard-check"></i>
+                    <span>Suivi</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboard.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Tableau de bord</span>
+                </a>
+            </li>
+
+            <!-- Employé : Directeur uniquement -->
+            <li id="menuEmploye" class="hidden">
+                <a href="javascript:void(0)">
+                    <i class="fas fa-user-cog"></i>
+                    <span>Employé</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</aside>
+
+<!-- =========================
+     CONTENU PRINCIPAL
+========================= -->
+<main class="content">
+    <section class="hero">
+
+        <!-- Image direction -->
+        <div class="image-direction">
+            <img src="images/direction.jpg" alt="Direction NSIA">
+        </div>
+
+        <!-- Message -->
+        <div class="message">
+            <h1>Bienvenue sur la plateforme NSIA</h1>
+            <p>
+                Chaque prospect est important, chaque relance vous rapproche de vos objectifs.
+                <br>
+                <strong>On fait quoi aujourd’hui ?</strong>
+            </p>
+
+            <!-- Boutons sous le texte -->
+            <div class="actions">
+                <a href="#" class="btn btn-primary">S’inscrire</a>
+                <a href="#" class="btn btn-outline">Se connecter</a>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<!-- =========================
+     MODAL EMPLOYÉ
+========================= -->
+<div class="modal hidden" id="employeModal">
+    <div class="modal-content">
+        <h2>Création d’un employé</h2>
+
+        <form id="employeForm">
+            <input type="text" id="nom" placeholder="Nom et prénoms" required>
+            <input type="date" id="dob" required>
+            <input type="tel" id="tel" placeholder="Téléphone" required>
+            <input type="email" id="email" placeholder="Email" required>
+
+            <select id="role" required>
+                <option value="">Sélectionner le rôle</option>
+                <option value="SUPERVISEUR">Superviseur</option>
+                <option value="CE">Chef d’équipe (CE)</option>
+                <option value="CC">Conseiller Commercial (CC)</option>
+            </select>
+
+            <input type="text" id="generatedId" readonly
+                   placeholder="ID généré automatiquement">
+
+            <div class="modal-actions">
+                <button type="submit" class="btn btn-primary">Créer</button>
+                <button type="button" id="closeModal"
+                        class="btn btn-outline">Annuler</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- JS -->
+<script src="scripts/accueil.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>NSIA | Inscription</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/inscription.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<main class="content">
+    <section class="hero">
+        <h1>Inscription Utilisateur</h1>
+        <p>Créez votre compte pour accéder aux fonctionnalités NSIA</p>
+
+        <div class="form-container">
+            <form id="inscriptionForm">
+                <input type="text" id="nomComplet" placeholder="Nom complet" required>
+                <input type="text" id="idEmploye" placeholder="ID fourni par le Directeur" required>
+                <input type="tel" id="telephone" placeholder="Téléphone" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <select id="sexe" required>
+                    <option value="">Sélectionner le sexe</option>
+                    <option value="Homme">Homme</option>
+                    <option value="Femme">Femme</option>
+                </select>
+                <input type="text" id="lieu" placeholder="Lieu de résidence" required>
+                <input type="password" id="motDePasse" placeholder="Mot de passe" required>
+                <input type="password" id="confirmMotDePasse" placeholder="Confirmer le mot de passe" required>
+                <input type="file" id="photo" accept="image/*">
+                <button type="submit" class="btn btn-primary">S'inscrire</button>
+                 <p class="login-link">
+                   Vous avez deja un  compte?
+                 <a href="connexion.html">Se connecter</a>
+
+                </p>
+            </form>
+        </div>
+    </section>
+</main>
+
+<script src="scripts/inscription.js"></script>
+</body>
+</html>

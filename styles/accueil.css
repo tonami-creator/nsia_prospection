@@ -1,0 +1,198 @@
+/* =========================
+   RESET & VARIABLES
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+:root {
+    --primary: #004aad;
+    --secondary: #f4f6f9;
+    --dark: #222;
+    --white: #ffffff;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+body {
+    display: flex;
+    min-height: 100vh;
+    background: var(--secondary);
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+    width: 260px;
+    background: var(--primary);
+    color: var(--white);
+    position: fixed;
+    height: 100%;
+}
+
+.logo {
+    padding: 20px;
+    text-align: center;
+    background: #003b8f;
+}
+
+.logo img {
+    max-width: 150px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding-top: 20px;
+}
+
+.sidebar nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 25px;
+    color: var(--white);
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================
+   CONTENT
+========================= */
+.content {
+    margin-left: 260px;
+    padding: 40px;
+    width: 100%;
+}
+
+.hero {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Image direction */
+.image-direction img {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 12px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+}
+
+/* Message */
+.message h1 {
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.message p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+/* Boutons inscription / connexion */
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* =========================
+   MODAL EMPLOYÉ
+========================= */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--white);
+    padding: 30px;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 12px;
+}
+
+.modal-content h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+/* =========================
+   UTILITAIRES
+========================= */
+.hidden {
+    display: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+
+    .sidebar span {
+        display: none;
+    }
+
+    .content {
+        margin-left: 70px;
+        padding: 20px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>NSIA | Prospect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/prospection.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- =========================
+     NAVIGATION LATÉRALE
+========================= -->
+<aside class="sidebar">
+    <div class="logo">
+        <img src="images/logo_nsia.jpg" alt="Logo NSIA">
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i><span>Accueil</span></a></li>
+            <li><a href="prospection.html" class="active"><i class="fas fa-users"></i><span>Prospect</span></a></li>
+            <li><a href="suivi.html"><i class="fas fa-clipboard-check"></i><span>Suivi</span></a></li>
+            <li><a href="dashboard.html"><i class="fas fa-chart-line"></i><span>Tableau de bord</span></a></li>
+            <li class="employe-btn hidden"><a href="javascript:void(0)"><i class="fas fa-user-cog"></i><span>Employé</span></a></li>
+        </ul>
+    </nav>
+</aside>
+
+<!-- =========================
+     CONTENU PRINCIPAL
+========================= -->
+<main class="content">
+    <section class="hero">
+        <h1>Gestion des Prospects</h1>
+        <p>Enregistrez et suivez vos prospects facilement.</p>
+
+        <!-- FORMULAIRE PROSPECT -->
+        <div class="form-container">
+            <form id="prospectForm">
+                <input type="text" id="nomProspect" placeholder="Nom et prénoms" required>
+                <input type="tel" id="telProspect" placeholder="Téléphone" required>
+
+                <select id="typeEngin" required>
+                    <option value="">Type d'engin</option>
+                    <option value="Moto">Moto</option>
+                    <option value="Tricycle">Tricycle</option>
+                    <option value="Personnel">Personnel</option>
+                    <option value="Bus">Bus</option>
+                    <option value="Mini bus">Mini bus</option>
+                    <option value="Camion">Camion</option>
+                    <option value="Autres">Autres</option>
+                </select>
+
+                <label for="dateDebut">Date Début</label>
+                <input type="date" id="dateDebut" required>
+
+                <label for="dateFin">Date Fin</label>
+                <input type="date" id="dateFin" required>
+
+                <input type="text" id="lieu" placeholder="Lieu de rencontre" required>
+                <input type="text" id="details" placeholder="Autres détails">
+
+                <button type="submit" class="btn btn-primary">Ajouter Prospect</button>
+            </form>
+        </div>
+
+        <!-- TABLEAU PROSPECTS -->
+        <div class="table-container">
+            <table id="prospectTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Téléphone</th>
+                        <th>Type Engin</th>
+                        <th>Date Début</th>
+                        <th>Date Fin</th>
+                        <th>Lieu</th>
+                        <th>Détails</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Les prospects seront insérés ici via JS -->
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+</main>
+
+<script src="scripts/prospection.js"></script>
+</body>
+</html>

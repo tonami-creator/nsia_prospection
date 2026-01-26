@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>NSIA | Gestion Employés</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/employe.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- =========================
+     SIDEBAR
+========================= -->
+<aside class="sidebar">
+    <div class="logo">
+        <img src="images/logo_nsia.jpg" alt="Logo NSIA">
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i><span>Accueil</span></a></li>
+            <li><a href="prospect.html"><i class="fas fa-users"></i><span>Prospect</span></a></li>
+            <li><a href="suivi.html"><i class="fas fa-clipboard-check"></i><span>Suivi</span></a></li>
+            <li><a href="dashboard-advanced.html"><i class="fas fa-chart-line"></i><span>Tableau de bord</span></a></li>
+            <li><a href="#" class="active"><i class="fas fa-user-cog"></i><span>Employé</span></a></li>
+        </ul>
+    </nav>
+</aside>
+
+<!-- =========================
+     CONTENU PRINCIPAL
+========================= -->
+<main class="content">
+    <section class="hero">
+        <h1>Gestion des Employés</h1>
+        <p>Créer et gérer les utilisateurs (Superviseur, CE, CC)</p>
+
+        <!-- FORMULAIRE EMPLOYÉ -->
+        <div class="form-container">
+            <form id="employeForm">
+                <input type="text" id="nom" placeholder="Nom" required>
+                <input type="text" id="prenom" placeholder="Prénom" required>
+                <label for="dateNaissance">Date de naissance</label>
+                <input type="date" id="dateNaissance" required>
+                <input type="tel" id="telephone" placeholder="Téléphone" required>
+                <input type="email" id="email" placeholder="Email" required>
+
+                <select id="role" required>
+                    <option value="">Sélectionner le rôle</option>
+                    <option value="Superviseur">Superviseur</option>
+                    <option value="CE">Chef d'équipe (CE)</option>
+                    <option value="CC">Conseiller Commercial (CC)</option>
+                </select>
+
+                <button type="submit" class="btn btn-primary">Créer Employé</button>
+            </form>
+        </div>
+
+        <!-- TABLEAU EMPLOYÉS -->
+        <div class="table-container">
+            <table id="employeTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Date Naissance</th>
+                        <th>Téléphone</th>
+                        <th>Email</th>
+                        <th>Rôle</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Les employés seront insérés ici via JS -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<script src="scripts/employe.js"></script>
+</body>
+</html>

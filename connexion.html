@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>NSIA | Connexion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/connexion.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<main class="content">
+    <section class="hero">
+        <h1>Connexion</h1>
+        <p>Entrez votre ID et mot de passe pour accéder à votre compte</p>
+
+        <div class="form-container">
+            <form id="connexionForm">
+                <input type="text" id="userID" placeholder="ID utilisateur" required>
+                <input type="password" id="password" placeholder="Mot de passe" required>
+                <button type="submit" class="btn btn-primary">Se connecter</button>
+                <p class="login-link">
+                Vous n'avez pas de compte?
+                 <a href="inscription.html">Creez un compte</a>
+
+                </p>
+            </form>
+        </div>
+    </section>
+</main>
+
+<script src="scripts/connexion.js"></script>
+</body>
+</html>

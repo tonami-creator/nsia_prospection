@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>NSIA | Suivi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/prospection.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- =========================
+     SIDEBAR
+========================= -->
+<aside class="sidebar">
+    <div class="logo">
+        <img src="images/logo_nsia.jpg" alt="Logo NSIA">
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i><span>Accueil</span></a></li>
+            <li><a href="prospection.html"><i class="fas fa-users"></i><span>Prospect</span></a></li>
+            <li><a href="suivi.html"><i class="fas fa-clipboard-check"></i><span>Suivi</span></a></li>
+            <li><a href="dashboard.html"><i class="fas fa-chart-line"></i><span>Tableau de bord</span></a></li>
+            <li class="employe-btn hidden"><a href="javascript:void(0)"><i class="fas fa-user-cog"></i><span>Employé</span></a></li>
+        </ul>
+    </nav>
+</aside>
+
+<!-- =========================
+     CONTENU PRINCIPAL
+========================= -->
+<main class="content">
+    <section class="hero">
+        <h1>Suivi des Prospects</h1>
+        <p>Consultez et mettez à jour les actions pour chaque prospect.</p>
+
+        <!-- TABLEAU DES SUIVIS -->
+        <div class="table-container">
+            <table id="suiviTable">
+                <thead>
+                    <tr>
+                        <th>ID Prospect</th>
+                        <th>Nom</th>
+                        <th>Type Engin</th>
+                        <th>Date Début</th>
+                        <th>Date Fin</th>
+                        <th>Action</th>
+                        <th>Observation</th>
+                        <th>Progression (%)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Les suivis seront insérés ici via JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- FORMULAIRE AJOUT/EDIT SUIVI -->
+        <div class="form-container">
+            <form id="suiviForm">
+                <select id="prospectSelect" required>
+                    <option value="">Sélectionner un prospect</option>
+                </select>
+
+                <select id="actionSuivi" required>
+                    <option value="">Action</option>
+                    <option value="Relance">Relance</option>
+                    <option value="Rendez-vous">Rendez-vous</option>
+                    <option value="Visite domicile">Visite domicile</option>
+                    <option value="Autre">Autre</option>
+                </select>
+
+                <select id="observationSuivi" required>
+                    <option value="">Observation</option>
+                    <option value="Contrat valide">Contrat valide</option>
+                    <option value="En cours">En cours</option>
+                    <option value="Perdu">Perdu</option>
+                </select>
+
+                <input type="number" id="progressionSuivi" placeholder="Progression %" min="0" max="100" required>
+
+                <button type="submit" class="btn btn-primary">Ajouter / Modifier Suivi</button>
+            </form>
+        </div>
+
+    </section>
+</main>
+
+<script src="scripts/suivi.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>NSIA | Tableau de bord avancé</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/tdb.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- =========================
+     SIDEBAR
+========================= -->
+<aside class="sidebar">
+    <div class="logo">
+        <img src="images/logo_nsia.jpg" alt="Logo NSIA">
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i><span>Accueil</span></a></li>
+            <li><a href="prospection.html"><i class="fas fa-users"></i><span>Prospect</span></a></li>
+            <li><a href="suivi.html"><i class="fas fa-clipboard-check"></i><span>Suivi</span></a></li>
+            <li><a href="dashboard.html"><i class="fas fa-chart-line"></i><span>Tableau de bord</span></a></li>
+            <li class="employe-btn hidden"><a href="javascript:void(0)"><i class="fas fa-user-cog"></i><span>Employé</span></a></li>
+        </ul>
+    </nav>
+</aside>
+
+<!-- =========================
+     CONTENU PRINCIPAL
+========================= -->
+<main class="content">
+    <section class="hero">
+        <h1>Tableau de Bord Avancé</h1>
+        <p>Analyse des performances par zone, équipe et CC.</p>
+
+        <!-- =========================
+             FILTRES
+        ========================= -->
+        <div class="filters">
+            <select id="filterZone">
+                <option value="">Toutes les zones</option>
+            </select>
+            <select id="filterEquipe">
+                <option value="">Toutes les équipes</option>
+            </select>
+            <select id="filterCC">
+                <option value="">Tous les CC</option>
+            </select>
+        </div>
+
+        <!-- =========================
+             CARDS STATISTIQUES
+        ========================= -->
+        <div class="cards-container">
+            <div class="card">
+                <h3>Total Prospects</h3>
+                <p id="totalProspects">0</p>
+            </div>
+            <div class="card">
+                <h3>Prospects par Type</h3>
+                <canvas id="typeEnginChart"></canvas>
+            </div>
+            <div class="card">
+                <h3>Contrats</h3>
+                <canvas id="contratsChart"></canvas>
+            </div>
+        </div>
+
+        <!-- =========================
+             PERFORMANCES CC / ÉQUIPE
+        ========================= -->
+        <section class="performance-section">
+            <h2>Performances par CC et Équipe</h2>
+            <div id="performanceContainer" class="cards-container">
+                <!-- Cartes générées via JS -->
+            </div>
+        </section>
+    </section>
+</main>
+
+<!-- =========================
+     JS
+========================= -->
+<script src="scripts/tdb.js"></script>
+</body>
+</html>
