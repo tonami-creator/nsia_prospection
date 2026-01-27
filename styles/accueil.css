@@ -36,14 +36,12 @@ body {
 }
 
 .logo {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     background: #003b8f;
 }
 
-.logo img {
-    max-width: 150px;
-}
+
 
 .sidebar nav ul {
     list-style: none;
