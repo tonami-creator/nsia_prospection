@@ -70,5 +70,10 @@ body {
 }
 
 .btn-primary:hover {
-    background: #003b8f;
+    background: #1b5fbe;
+}
+
+.form-container .btn-primary a{
+     text-decoration: none;
+     color: #f4f6f9;
 }
