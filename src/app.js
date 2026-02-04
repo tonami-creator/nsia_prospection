@@ -39,6 +39,6 @@ app.use("/api/employes", require("./routes/employe.routes"));
 // Démarrer le serveur
 // =========================
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
+app.listen(PORT,  "0.0.0.0",() => {
   console.log(`API NSIA en ligne sur http://localhost:${PORT}`);
 });
