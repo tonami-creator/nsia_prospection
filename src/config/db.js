@@ -1,14 +1,14 @@
 const mysql = require("mysql2/promise");
+
+// Si tu utilises dotenv en local, garde cette ligne :
 require("dotenv").config();
 
-const db = mysql.createPool({
-  host: process.env.mysql.railway.internal,
-  user: process.env.root,
-  password: process.env.JhdENBsSEVjAYcsaVsnpVYFaEhTUOTqq,
-  database: process.env.railway,
+const pool = mysql.createPool({
+  host     : process.env.MYSQLHOST,
+  user     : process.env.MYSQLUSER,
+  password : process.env.MYSQLPASSWORD,
+  database : process.env.MYSQLDATABASE,
+  port     : process.env.MYSQLPORT
 });
 
-module.exports = db;
-
-
-
+module.exports = pool;
