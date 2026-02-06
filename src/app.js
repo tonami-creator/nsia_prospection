@@ -58,3 +58,11 @@ app.use((err, req, res, next) => {
   console.error("Erreur =>", err);
   res.status(err.status || 500).json({ message: err.message, stack: err.stack });
 });
+
+
+
+const cors = require("cors");
+app.use(cors({
+  origin: "*", // Autorise toutes les sources pour le moment
+  methods: ["GET", "POST", "PUT", "DELETE"]
+}));
