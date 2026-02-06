@@ -16,18 +16,21 @@ exports.create = async (req, res) => {
   try {
     const {
       id,
-      nom,
+      nomComplet,
       telephone,
-      typeEngin,
-      dateDebut,
-      dateFin,
+      type_engin,
+      date_debut,
+      date_fin,
       lieu,
       details,
+      prospect_id,
+      equipe_id,
+      cc_id,
     } = req.body;
 
     await db.query(
-      "INSERT INTO prospects (id, nom, telephone, typeEngin, dateDebut, dateFin, lieu, details) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-      [id, nom, telephone, typeEngin, dateDebut, dateFin, lieu, details]
+      "INSERT INTO prospects (id, nomComplet, telephone, type_engin, date_debut, date_fin, lieu, details, prospect_id, equipe_id, cc_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+      [id, nom, telephone, type_engin, date_debut, date_fin, lieu, details,prospect_id,equipe_id,cc_id]
     );
 
     res.status(201).json({ message: "Prospect ajouté !" });
