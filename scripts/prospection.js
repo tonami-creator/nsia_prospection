@@ -46,7 +46,7 @@ function renderProspects() {
 // =========================
 async function fetchProspects() {
     try {
-        const response = await fetch("http://localhost:5000/api/prospects");
+        const response = await fetch("http://nsiaprospection-production.up.railway.app/api/prospects");
         const data = await response.json();
         prospects = data;
         renderProspects();
@@ -81,7 +81,7 @@ prospectForm.addEventListener("submit", async (e) => {
     };
 
     try {
-        const res = await fetch("http://localhost:5000/api/prospects", {
+        const res = await fetch("http://nsiaprospection-production.up.railway.app/api/prospects", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(nouveauProspect)
@@ -105,7 +105,7 @@ async function deleteProspect(id) {
     if (!confirm("Confirmer la suppression ?")) return;
 
     try {
-        const res = await fetch(`http://localhost:5000/api/prospects/${id}`, {
+        const res = await fetch(`http://nsiaprospection-production.up.railway.app/api/prospects/${id}`, {
             method: "DELETE"
         });
         if (res.ok) {
@@ -134,7 +134,7 @@ function editProspect(id) {
     document.getElementById("details").value = prospect.details;
 
     // Supprimer l’ancien prospect avant réinsertion
-    fetch(`http://localhost:5000/api/prospects/${id}`, { method: "DELETE" })
+    fetch(`http://nsiaprospection-production.up.railway.app/api/prospects/${id}`, { method: "DELETE" })
         .then(() => fetchProspects())
         .catch(err => console.error("Erreur suppression temporaire :", err));
 }

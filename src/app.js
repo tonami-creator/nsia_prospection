@@ -42,3 +42,19 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT,  "0.0.0.0",() => {
   console.log(`API NSIA en ligne sur http://localhost:${PORT}`);
 });
+
+
+
+app.get("/api/test-db", async (req, res) => {
+  try {
+    const [rows] = await db.query("SELECT 1 + 1 AS result");
+    res.json({ success: true, result: rows[0].result });
+  } catch (err) {
+    res.status(500).json({ message: "Erreur connexion base", error: err.message });
+  }
+});
+  
+app.use((err, req, res, next) => {
+  console.error("Erreur =>", err);
+  res.status(err.status || 500).json({ message: err.message, stack: err.stack });
+});

@@ -8,3 +8,4 @@ router.post("/", suiviController.createOrUpdate);
 router.delete("/:prospect_id/:action", suiviController.delete);
 
 module.exports = router;
+
