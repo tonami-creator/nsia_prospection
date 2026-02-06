@@ -61,8 +61,3 @@ app.use((err, req, res, next) => {
 
 
 
-const cors = require("cors");
-app.use(cors({
-  origin: "*", // Autorise toutes les sources pour le moment
-  methods: ["GET", "POST", "PUT", "DELETE"]
-}));
