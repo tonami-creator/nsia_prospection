@@ -27,9 +27,9 @@ function renderProspects() {
             <td>${p.id}</td>
             <td>${p.nom}</td>
             <td>${p.telephone}</td>
-            <td>${p.typeEngin}</td>
-            <td>${p.dateDebut}</td>
-            <td>${p.dateFin}</td>
+            <td>${p.type_engin}</td>
+            <td>${p.date_debut}</td>
+            <td>${p.date_fin}</td>
             <td>${p.lieu}</td>
             <td>${p.details}</td>
             <td>
@@ -61,10 +61,10 @@ async function fetchProspects() {
 prospectForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const dateDebut = document.getElementById("dateDebut").value;
-    const dateFin = document.getElementById("dateFin").value;
+    const date_debut = document.getElementById("dateDebut").value;
+    const date_fin = document.getElementById("dateFin").value;
 
-    if (new Date(dateFin) < new Date(dateDebut)) {
+    if (new Date(date_fin) < new Date(date_debut)) {
         alert("La Date Fin ne peut pas être antérieure à la Date Début.");
         return;
     }
@@ -73,9 +73,9 @@ prospectForm.addEventListener("submit", async (e) => {
         id: genererIdProspect(),
         nom: document.getElementById("nomProspect").value.trim(),
         telephone: document.getElementById("telProspect").value.trim(),
-        typeEngin: document.getElementById("typeEngin").value,
-        dateDebut: dateDebut,
-        dateFin: dateFin,
+        type_engin: document.getElementById("typeEngin").value,
+        date_debut: dateDebut,
+        date_fin: dateFin,
         lieu: document.getElementById("lieu").value.trim(),
         details: document.getElementById("details").value.trim()
     };
@@ -127,9 +127,9 @@ function editProspect(id) {
 
     document.getElementById("nomProspect").value = prospect.nom;
     document.getElementById("telProspect").value = prospect.telephone;
-    document.getElementById("typeEngin").value = prospect.typeEngin;
-    document.getElementById("dateDebut").value = prospect.dateDebut;
-    document.getElementById("dateFin").value = prospect.dateFin;
+    document.getElementById("typeEngin").value = prospect.type_engin;
+    document.getElementById("dateDebut").value = prospect.date_debut;
+    document.getElementById("dateFin").value = prospect.date_fin;
     document.getElementById("lieu").value = prospect.lieu;
     document.getElementById("details").value = prospect.details;
 

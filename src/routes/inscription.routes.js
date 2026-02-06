@@ -1,7 +1,8 @@
+
 const router = require("express").Router();
 const inscriptionController = require("../controllers/inscription.controller");
 
-// POST /api/inscription
+// Route pour l'inscription
 router.post("/", inscriptionController.register);
 
 module.exports = router;

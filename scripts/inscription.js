@@ -1,15 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     const inscriptionForm = document.getElementById("inscriptionForm");
 
-    if (!inscriptionForm) {
-        console.error("Formulaire inscription introuvable");
-        return;
-    }
+    if (!inscriptionForm) return;
 
     inscriptionForm.addEventListener("submit", async function (e) {
         e.preventDefault();
 
+        // Récupération des données
         const nomComplet = document.getElementById("nomComplet").value.trim();
         const idEmploye = document.getElementById("idEmploye").value.trim();
         const telephone = document.getElementById("telephone").value.trim();
@@ -24,39 +21,27 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Préparer le body de la requête
-        const body = {
-            nomComplet,
-            idEmploye,
-            telephone,
-            email,
-            sexe,
-            lieu,
-            motDePasse
-        };
+        const body = { nomComplet, idEmploye, telephone, email, sexe, lieu, motDePasse };
 
         try {
-            const response = await fetch("http://localhost:5000/api/inscription", {
+            // URL corrigée vers Railway
+            const response = await fetch("https://nsiaprospection-production.up.railway.app/api/inscription", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)
             });
 
             const data = await response.json();
 
             if (response.ok) {
-                alert(data.message || "Inscription réussie. Vous pouvez maintenant vous connecter.");
-                inscriptionForm.reset();
+                alert(data.message);
                 window.location.href = "connexion.html";
             } else {
                 alert(data.message || "Erreur lors de l'inscription.");
             }
         } catch (err) {
-            console.error("Erreur réseau ou serveur :", err);
-            alert("Erreur réseau ou serveur indisponible.");
+            console.error("Erreur réseau :", err);
+            alert("Impossible de contacter le serveur.");
         }
     });
-
 });
